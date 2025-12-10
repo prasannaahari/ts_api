@@ -3,7 +3,7 @@ import ParentReactMemo from "./components/ParentReactMemo";
 import Mine1 from "./components/Mine1Axios";
 import Mine2 from "./components/Mine2Fetch";
 import Mine3 from "./components/Mine3ApiSearch";
-import Mine4 from "./components/Mine4Debounce";
+import Mine4 from "./components/Mine4Throttle";
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
             Mine3 api search
           </Link>
           <Link to="/mine4" className="border-2 rounded-3xl p-2 m-4">
-            Mine4 debounce
+            Mine4 throttle
           </Link>
          
         </nav>
