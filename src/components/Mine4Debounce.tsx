@@ -5,13 +5,13 @@ interface Response {
 interface ProductRes {
   [key: string]: any;
 }
-
+let timer: number | undefined;
 function Mine4() {
   const [display, setDisplay] = useState<ProductRes[]>([]);
   const [query, setQuery] = useState<string>("");
   const [error, setError] = useState<boolean>(false);
   const [loader, setLoader] = useState<boolean>(false);
-  let timer: number | undefined;
+
   useEffect(() => {
     if (timer) return;
     const fetchData = async () => {
@@ -37,14 +37,16 @@ function Mine4() {
 
     timer = window.setTimeout(() => {
       timer = undefined;
-    }, 2000);
+    }, 1000);
 
-    return () => clearTimeout(timer);
+    return () => {
+      if (timer) clearTimeout(timer);
+      timer = undefined;
+    };
   }, [query]);
 
   function handleSearch(e: React.ChangeEvent<HTMLInputElement>) {
     setQuery(e.target.value);
-    e.target.value || setQuery("");
   }
 
   return (
