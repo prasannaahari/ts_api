@@ -5,7 +5,7 @@ interface Props {
 
 function ProtectedWrapper({ children }: Props) {
   const login: boolean =true;
-  return login ? children : <h1>unauthorised</h1>;
+  return login ? children : <h1>unauthorised page</h1>;
 }
 
 export default ProtectedWrapper;
