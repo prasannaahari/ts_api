@@ -1,4 +1,4 @@
-import { BrowserRouter, Link, NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function App() {
   return (
