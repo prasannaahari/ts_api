@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { createBrowserRouter, Link, NavLink } from "react-router-dom";
-import Detail from "./Detail";
+import { Link, NavLink } from "react-router-dom";
 
 interface ProductResponse {
   products: Product[];
