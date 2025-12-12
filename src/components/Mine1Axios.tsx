@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { createBrowserRouter, Link, NavLink } from "react-router-dom";
+import Detail from "./Detail";
 
 interface ProductResponse {
   products: Product[];
@@ -8,6 +10,7 @@ interface Product {
   [key:string]:any
 }
 function Mine1() {
+ 
   const [display, setDisplay] = useState<Product[]>([]);
   const [query, setQuery] = useState<string>("");
   const [search, setSearch] = useState<string>("");
@@ -44,6 +47,7 @@ function Mine1() {
   }
   return (
     <>
+    <NavLink to="/" className="bg-amber-700 text-3xl text-white font-bold p-2">APP</NavLink>
     <h1 className="text-3xl w-max m-auto">axios</h1>
       <input
         type="text"
@@ -98,19 +102,20 @@ function Mine1() {
               )
 
               .map((item) => (
+               <Link to ={`/product/${item.id}`} className="hover:cursor-pointer">
                 <article className="group max-w-sm rounded p-4 border-2 border-b-cyan-950 m-3 h-80 w-60 flex flex-col">
                   <div className="truncate group-hover:overflow-visible w-50 text-2xl text-cyan-700 h-18">
                     {item.title}
                   </div>
                   <hr />
                   <img
-                    className="w-40 h-80 self-center"
+                    className="w-4/5 self-center"
                     src={item.thumbnail}
                     alt={item.title}
                   />
                   <hr />
                   <span className="text-2xl">$:{item.price}</span>
-                </article>
+                </article></Link>
               ))
           )}
         </div>
