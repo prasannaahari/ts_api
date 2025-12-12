@@ -26,6 +26,7 @@ function Detail() {
         }
         one()
     },[ids])
+    
   return (
     <>
       <article className="m-auto p-5 border-3 rounded-sm w-100 shadow-2xl mt-20">
