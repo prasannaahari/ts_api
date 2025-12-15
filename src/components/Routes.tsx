@@ -1,6 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import Detail from "./Detail";
 import Mine1 from "./Mine1Axios";
 import Mine2 from "./Mine2Fetch";
 import Mine3 from "./Mine3ApiSearch";
@@ -10,11 +9,18 @@ import ProtectedWrapper from "./ProtectedWrapper";
 import Protected from "./Protected";
 import Login from "./Login";
 import SuccessLog from "./SuccessLog";
+import { lazy, Suspense } from "react";
 
+const Detail=lazy(()=>import ("./Detail"))
 export const routes = createBrowserRouter([
   {
     path: "/product/:ids",
-    element: <Detail />,
+    element: (
+      
+      <Suspense fallback= { <h1 className="text-5xl text-green-800 w-1/2 m-auto">loading</h1>}>
+      <Detail/>
+      </Suspense>
+    )
   },
   {
     path: "/",
