@@ -8,6 +8,8 @@ import Mine4 from "./Mine4Throttle";
 import ParentReactMemo from "./ParentReactMemo";
 import ProtectedWrapper from "./ProtectedWrapper";
 import Protected from "./Protected";
+import Login from "./Login";
+import SuccessLog from "./SuccessLog";
 
 export const routes = createBrowserRouter([
   {
@@ -46,4 +48,12 @@ export const routes = createBrowserRouter([
       </ProtectedWrapper>
     ),
   },
+  {
+    path:"/login",
+    element:<Login/>
+  },
+  {
+    path:"/successLog",
+    element:<SuccessLog/>
+  }
 ]);

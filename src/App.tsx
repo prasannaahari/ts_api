@@ -28,6 +28,9 @@ function App() {
           <Link to="/protected" className="border-2 rounded-3xl p-2 m-auto">
             secret
           </Link>
+          <Link to="/login" className="border-2 rounded-3xl p-2 m-auto">
+            Login
+          </Link>
         </nav>
 
         
