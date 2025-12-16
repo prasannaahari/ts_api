@@ -4,7 +4,7 @@ function App() {
   return (
     <>
       
-        <nav className="flex mt-2">
+        <nav className="flex m-3 flex-wrap gap-3">
           <NavLink
             to="/mine1"
             className={({ isActive }) =>
@@ -30,6 +30,12 @@ function App() {
           </Link>
           <Link to="/login" className="border-2 rounded-3xl p-2 m-auto">
             Login
+          </Link>
+          <Link to="/usestate" className="border-2 rounded-3xl p-2 m-auto">
+            usestate
+          </Link>
+          <Link to="/reduxCounter" className="border-2 rounded-3xl p-2 m-auto">
+            rtk
           </Link>
         </nav>
 
