@@ -12,6 +12,10 @@ import ProtectedWrapper from "./ProtectedWrapper";
 import SuccessLog from "./SuccessLog";
 import UseState from "./UseState";
 import CounterRtk from "./CounterRtk";
+import ParamsCart from "./ParamsCart";
+import ParamsAlone from "./ParamsALone";
+import Mine5Crud from "../Mine5Crud";
+import Mine5Params from "../Mine5Params";
 
 const Detail = lazy(() => import("./Detail"));
 export const routes = createBrowserRouter([
@@ -74,5 +78,21 @@ export const routes = createBrowserRouter([
   {
     path:"reduxCounter",
     element:<CounterRtk/>
+  },
+  {
+    path:"paramsCart",
+    element:<ParamsCart/>
+  },
+  {
+    path:"/posts/:id",
+    element:<ParamsAlone/>
+  },
+  {
+    path:"/mine5Crud",
+    element:<Mine5Crud/>
+  },
+  {
+    path:"/products/:id",
+    element:<Mine5Params/>
   }
 ]);
